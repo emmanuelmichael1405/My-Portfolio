@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        div.container{
+            margin-left: 300px; 
+            margin-top: 100px;
+        }
+        div.box1{
+    background: white;
+             transition: background 1s linear; /* smooth fade */
+    border:2px solid black;
+    border-radius: 50%;
+    text-align: center;
+    height: 100px;
+    width: 100px;  
+    line-height: 100px;
+    color: aliceblue;
+    font-size: x-large;
+    font-weight: bolder;
+        }
+        div.box2{
+    background: white;
+             transition: background 1s linear; /* smooth fade */
+    border:2px solid black;
+    border-radius: 50%;
+    text-align: center;
+    height: 100px;
+    width: 100px;  
+    line-height: 100px;
+    color: aliceblue;
+    font-size: x-large;
+    font-weight: bolder;
+        }
+        div.box3{
+    
+    border:2px solid black;
+    border-radius: 50%;
+    text-align: center;
+    height: 100px;
+    width: 100px;  
+    line-height: 100px;
+    color: aliceblue;
+    font-size: x-large;
+    font-weight: bolder;
+    background: white;
+             transition: background 1s linear; /* smooth fade */
+        }
+    </style>
+    <div class="container">
+    <div id="red" class="box1">
+STOP
+    </div><br>
+<div id="yellow" class="box2">
+READY
+</div><br>
+<div id="green" class="box3">
+    GO
+</div>
+    
+        <script>
+    function runTrafficLight() {
+        // RED ON for 5 seconds
+        setTimeout(() => {
+            clearLights();
+            document.getElementById("red").style.background = "red";
+        }, 0);
+
+        // YELLOW ON for 5 seconds
+        setTimeout(() => {
+            clearLights();
+            document.getElementById("yellow").style.background = "yellow";
+        }, 5000);
+
+        // GREEN ON for 5 seconds
+        setTimeout(() => {
+            clearLights();
+            document.getElementById("green").style.background = "green";
+        }, 10000);
+
+        // Restart the full loop after 15 seconds
+        setTimeout(() => {
+            clearLights();
+            runTrafficLight();
+        }, 15000);
+    }
+
+    function clearLights() {
+        document.getElementById("red").style.background = "white";
+        document.getElementById("yellow").style.background = "white";
+        document.getElementById("green").style.background = "white";
+    }
+
+    runTrafficLight();
+</script>
+
+</body>
+</html>
